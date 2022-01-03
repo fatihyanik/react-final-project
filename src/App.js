@@ -1,8 +1,6 @@
 import './App.css';
 import TopBar from './components/TopBar';
-import Home from './pages/Home';
-import Posts from './components/Posts';
-import Register from './pages/Register';
+import Login from './pages/Login';
 
 
 
@@ -11,9 +9,7 @@ function App() {
   return (
     <div className="App">
       <TopBar />
-      <Home />
-      <Posts />
-      <Register />
+      <Login />
     </div>
   );
 }
