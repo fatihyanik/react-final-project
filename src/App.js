@@ -1,4 +1,3 @@
-import "./App.css";
 import TopBar from "./components/TopBar";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -11,34 +10,37 @@ import { useEffect, useState } from "react";
 import allPosts from "./datas/posts";
 
 function App() {
+
   const [posts, setPosts] = useState([]);
   const [currentUser, setCurrentUser] = useState({});
 
-  async function getPosts() {
+  async function getPosts(){   
+
     setPosts(allPosts);
+
   }
 
-  useEffect(() => {
-    getPosts();
-  }, []);
+  useEffect(()=>{
+      getPosts();
+  },[])
+
 
   console.log(posts);
 
+  
   return (
-    <div className="App">
-      <Router>
-        <TopBar currentUser={currentUser} setCurrentUser={setCurrentUser} />
-        <Routes>
-          <Route exact path="/" element={<Home posts={posts} />} />
-          <Route path="/posts" element={<Home posts={posts} />} />
-          <Route path="/register" element={currentUser.active ? <Home posts={posts} /> : <Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/post/:id" element={<Single posts={posts} />} />
-          <Route path="/write" element={<Write />} />
-          <Route path="/settings" element={<Settings />} />
-        </Routes>
-      </Router>
-    </div>
+    <Router>
+      <TopBar currentUser={currentUser} setCurrentUser={setCurrentUser}/>
+      <Routes>
+        <Route exact path="/" element={<Home posts={posts} />} />
+        <Route path="/posts" element={<Home posts={posts} />} />
+        <Route path="/register" element={currentUser.active ? <Home posts={posts} /> : <Register />} />
+        <Route path="/login" element={currentUser.active ? <Home posts={posts} /> : <Login setCurrentUser={setCurrentUser} />} />
+        <Route path="/post/:id" element={<Single posts={posts} />} />
+        <Route path="/write" element={currentUser.active ? <Write /> : <Login setCurrentUser={setCurrentUser}  />} />
+        <Route path="/settings" element={currentUser.active ? <Settings currentUser={currentUser} /> : <Login setCurrentUser={setCurrentUser} />} />
+      </Routes>
+    </Router>
   );
 }
 
