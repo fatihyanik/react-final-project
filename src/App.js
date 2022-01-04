@@ -29,8 +29,8 @@ function App() {
       <Router>
         <TopBar currentUser={currentUser} setCurrentUser={setCurrentUser} />
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/posts" element={<Home />} />
+          <Route exact path="/" element={<Home posts={posts} />} />
+          <Route path="/posts" element={<Home posts={posts} />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/post/:id" element={<Single />} />

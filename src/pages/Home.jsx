@@ -1,12 +1,17 @@
-import React from 'react'
-import Header from '../components/Header'
+import Header from "../components/Header";
+import Posts from "../components/Posts";
+import Sidebar from "../components/Sidebar";
 
-function Home() {
-    return (
-        <div>
-            <Header />
-        </div>
-    )
+function Home({ posts }) {
+  return (
+    <div>
+      <Header />
+      <div className="flex">
+        <Posts posts={posts} />
+        <Sidebar />
+      </div>
+    </div>
+  );
 }
 
-export default Home
+export default Home;
