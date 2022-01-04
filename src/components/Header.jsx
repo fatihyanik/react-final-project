@@ -1,4 +1,4 @@
-export default function Header() {
+function Header() {
   return (
     <div className="mt-[60px]">
       <div className="flex flex-col items-center text-gray-400">
@@ -13,3 +13,5 @@ export default function Header() {
     </div>
   );
 }
+
+export default Header;

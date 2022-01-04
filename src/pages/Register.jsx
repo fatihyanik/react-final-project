@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-
 function Register() {
   const [users, setUsers] = useState([]);
 
