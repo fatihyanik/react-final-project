@@ -35,7 +35,7 @@ function App() {
           <Route path="/login" element={currentUser.active ? <Home posts={posts} /> : <Login setCurrentUser={setCurrentUser} />} />
           <Route path="/post/:id" element={<Single posts={posts} />} />
           <Route path="/write" element={currentUser.active ? <Write /> : <Login setCurrentUser={setCurrentUser}  />} />
-          <Route path="/settings" element={<Settings />} />
+          <Route path="/settings" element={currentUser.active ? <Settings currentUser={currentUser} /> : <Login setCurrentUser={setCurrentUser} />} />
         </Routes>
       </Router>
     </div>
