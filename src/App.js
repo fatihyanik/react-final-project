@@ -31,9 +31,9 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home posts={posts} />} />
           <Route path="/posts" element={<Home posts={posts} />} />
-          <Route path="/register" element={<Register />} />
+          <Route path="/register" element={currentUser.active ? <Home posts={posts} /> : <Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/post/:id" element={<Single />} />
+          <Route path="/post/:id" element={<Single posts={posts} />} />
           <Route path="/write" element={<Write />} />
           <Route path="/settings" element={<Settings />} />
         </Routes>
