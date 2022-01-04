@@ -7,13 +7,27 @@ import Settings from "./pages/Settings";
 import Single from "./pages/Single";
 import Write from "./pages/Write";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
+import { useEffect, useState } from "react";
+import allPosts from "./datas/posts";
 
 function App() {
+  const [posts, setPosts] = useState([]);
+  const [currentUser, setCurrentUser] = useState({});
+
+  async function getPosts() {
+    setPosts(allPosts);
+  }
+
+  useEffect(() => {
+    getPosts();
+  }, []);
+
+  console.log(posts);
+
   return (
     <div className="App">
       <Router>
-        <TopBar />
+        <TopBar currentUser={currentUser} setCurrentUser={setCurrentUser} />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/posts" element={<Home />} />
