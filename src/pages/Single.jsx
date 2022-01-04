@@ -1,10 +1,12 @@
 import Sidebar from "../components/Sidebar";
 import SinglePost from "../components/SinglePost";
 
-function Single() {
+function Single({ posts }) {
+  console.log(posts);
+
   return (
     <div className="flex">
-      <SinglePost />
+      <SinglePost posts={posts} />
       <Sidebar />
     </div>
   );
