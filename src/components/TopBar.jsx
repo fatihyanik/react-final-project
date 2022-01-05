@@ -10,7 +10,6 @@ function TopBar({ currentUser, setCurrentUser }) {
       <div className="flex-[3] flex items-center justify-center">
         <i className="text-[20px] mr-[10px] text-blue-600 cursor-pointer fab fa-facebook-square"></i>
         <i className="text-[20px] mr-[10px] text-pink-500 cursor-pointer fab fa-instagram-square"></i>
-        <i className="text-[20px] mr-[10px] text-pink-500 cursor-pointer fab fa-pinterest-square"></i>
         <i className="text-[20px] mr-[10px] text-blue-400 cursor-pointer fab fa-twitter-square"></i>
       </div>
       <div className="flex-[6]">
@@ -33,7 +32,6 @@ function TopBar({ currentUser, setCurrentUser }) {
           </li>
           {currentUser.name && (
             <Link onClick={logout} to="/">
-              {" "}
               <li className="mr-5 text-[18px] font-light cursor-pointer hover:text-gray-500">
                 LOGOUT
               </li>

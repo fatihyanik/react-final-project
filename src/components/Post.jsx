@@ -1,6 +1,6 @@
 function Post({ post }) {
   return (
-    <div className="w-96 mt-0 mr-6 mb-10 ml-6">
+    <div className="w-96 mt-10 mr-10 mb-10 ml-10">
       <img
         className="w-full h-72 object-cover rounded-[7px]"
         src={post.image}

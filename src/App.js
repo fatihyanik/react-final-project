@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
 import allPosts from "./datas/posts";
 
+
 function App() {
 
   const [posts, setPosts] = useState([]);

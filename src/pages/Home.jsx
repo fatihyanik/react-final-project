@@ -8,8 +8,9 @@ function Home({ posts }) {
       <Header />
       <div className="flex">
         <Posts posts={posts} />
-        <Sidebar />
+      
       </div>
+
     </div>
   );
 }
