@@ -1,9 +1,9 @@
 function Header() {
   return (
-    <div className="mt-[15px]">
+    <div className="mt-[30px]">
       <div className="flex flex-col items-center text-gray-400">
-        <span className="absolute top-[50px] text-[20px]">React & Node</span>
-        <span className="absolute top-[70px] text-[30px]">BLOG</span>
+        <span className="absolute top-[60px] text-[20px]">React & Node</span>
+        <span className="absolute top-[80px] text-[30px]">BLOG</span>
       </div>
       <img
         className="w-full  h-[350px] mt-[10px] object-cover"

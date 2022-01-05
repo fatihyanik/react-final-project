@@ -8,6 +8,8 @@ import Write from "./pages/Write";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
 import allPosts from "./datas/posts";
+import TopBar1 from "./components/TopBar1";
+
 
 
 function App() {
@@ -31,7 +33,8 @@ function App() {
   
   return (
     <Router>
-      <TopBar currentUser={currentUser} setCurrentUser={setCurrentUser}/>
+       <TopBar1 currentUser={currentUser} setCurrentUser={setCurrentUser}/>
+    {/*   <TopBar currentUser={currentUser} setCurrentUser={setCurrentUser}/> */}
       <Routes>
         <Route exact path="/" element={<Home posts={posts} />} />
         <Route path="/posts" element={<Home posts={posts} />} />
