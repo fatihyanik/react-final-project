@@ -60,7 +60,7 @@ function Login({ setCurrentUser }) {
           placeholder="Enter your password..."
         />
         <Link onClick={loginControl} to="/">
-          <button className="mt-5 cursor-pointer bg-red-400 text-white p-[10px] border-none rounded-[10px] text-center">
+          <button className="mt-5 cursor-pointer bg-red-400 text-white p-[10px] border-none rounded-[10px] text-center ">
             Login
           </button>
         </Link>

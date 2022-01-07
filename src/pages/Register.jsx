@@ -59,8 +59,8 @@ function Register() {
   }
 
   return (
-    <div className="h-[95vh] flex flex-col items-center justify-center bg-gradient-to-r from-gray-300 to-gray-300 bg-cover">
-      <span className="text-[50px]">Register</span>
+    <div className="h-[100vh] flex flex-col items-center justify-center bg-gradient-to-r from-gray-300 to-gray-300 bg-cover">
+      <span className="mt-[80px] text-[50px]">Register</span>
       <form onSubmit={registerPerson} className="mt-5 flex flex-col">
         <label className="my-[10px] mx-0">Username</label>
         <input
@@ -90,7 +90,7 @@ function Register() {
           Register
         </button>
       </form>
-      <button className="absolute top-[60px] right-[20px] bg-red-400 cursor-pointer p-[10px] border-none text-white rounded-[10px]">
+      <button className="absolute bottom-[60px] right-[20px] bg-red-400 cursor-pointer p-[10px] border-none text-white rounded-[10px]">
         <Link className="link" to="/login">
           Login
         </Link>
