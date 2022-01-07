@@ -56,7 +56,7 @@ function Login({ setCurrentUser }) {
           </button>
         </Link>
       </form>
-      <button className="absolute top-[60px] right-[20px] bg-teal-700 cursor-pointer p-[10px] border-none text-white rounded-[10px]">
+      <button className="absolute top-[100px] right-[20px] bg-teal-700 cursor-pointer p-[10px] border-none text-white rounded-[10px]">
         <Link className="link" to="/register">
           Register
         </Link>
