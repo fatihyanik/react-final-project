@@ -33,7 +33,7 @@ function Login({ setCurrentUser }) {
   }
 
   return (
-    <div className="h-[95vh] flex flex-col items-center justify-center bg-gradient-to-r from-gray-300 to-gray-300 bg-cover ">
+    <div className="h-[100vh] flex flex-col items-center justify-center bg-gradient-to-r from-gray-300 to-gray-300 bg-cover ">
       <span className="text-[50px]">Login</span>
       <form className=" mt-5 flex flex-col">
         <label className="my-[10px] mx-0">Email</label>

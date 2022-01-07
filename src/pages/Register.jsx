@@ -90,7 +90,7 @@ function Register() {
           Register
         </button>
       </form>
-      <button className="absolute bottom-[60px] right-[20px] bg-red-400 cursor-pointer p-[10px] border-none text-white rounded-[10px]">
+      <button className="absolute top-[60px] right-[20px] bg-red-400 cursor-pointer p-[10px] border-none text-white rounded-[10px]">
         <Link className="link" to="/login">
           Login
         </Link>

@@ -1,4 +1,3 @@
-import Sidebar from "../components/Sidebar";
 import SinglePost from "../components/SinglePost";
 
 function Single({ posts, setPosts, currentUser }) {
@@ -7,7 +6,6 @@ function Single({ posts, setPosts, currentUser }) {
   return (
     <div className="flex">
       <SinglePost posts={posts} setPosts={setPosts} currentUser={currentUser} />
-      <Sidebar />
     </div>
   );
 }
