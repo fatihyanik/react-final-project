@@ -7,9 +7,7 @@ function Home({ posts }) {
       <Header />
       <div className="flex">
         <Posts posts={posts} />
-      
       </div>
-
     </div>
   );
 }

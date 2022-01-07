@@ -1,6 +1,24 @@
-import Sidebar from "../components/Sidebar";
+function Setting({ currentUser, users, setUsers }) {
+  console.log(currentUser.email);
 
-function Setting({ currentUser }) {
+  function getNewAdmin(e) {
+    e.preventDefault();
+
+    const selectElement = document.querySelector("#admin");
+
+    console.log(selectElement.value);
+
+    const newArray = [...users];
+
+    newArray.forEach((user) => {
+      if (user.name === selectElement.value) {
+        user.admin = true;
+      }
+    });
+
+    setUsers(newArray);
+  }
+
   return (
     <div className="settings flex justify-center items-center flex-col">
       <div className="settingsWrapper">
@@ -19,10 +37,22 @@ function Setting({ currentUser }) {
           <input type="email" placeholder={currentUser.email} />
           <label>Password</label>
           <input type="password" placeholder={currentUser.password} />
-          <button className="settingsSubmitButton">Update</button>
         </form>
       </div>
-      <Sidebar />
+      <div>Admin Yetkisi Ver</div>
+      <form onSubmit={getNewAdmin}>
+        <label for="admin">Choose a new Admin:</label>
+
+        <select name="admin" id="admin">
+          {users.map((user) => {
+            return user.name !== currentUser.name ? (
+              <option value={user.name}>{user.name}</option>
+            ) : null;
+          })}
+        </select>
+
+        <input id="submit" type="submit" value="Submit" />
+      </form>
     </div>
   );
 }
