@@ -1,25 +1,18 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import allUsers from "../datas/allUsers";
 
 function Login({ setCurrentUser }) {
   const [users, setUsers] = useState([]);
   const [activeUser, setActiveUser] = useState({});
 
-  console.log(setCurrentUser);
-
   async function getUsers() {
-    const users = await fetch("/users.json");
-    const userJSON = await users.json();
-
-    setUsers(userJSON);
+    setUsers(allUsers);
   }
 
   useEffect(() => {
     getUsers();
   }, []);
-
-  console.log(users);
 
   function loginControl(e) {
     e.preventDefault();
@@ -38,8 +31,6 @@ function Login({ setCurrentUser }) {
 
     setCurrentUser({ ...gettingUser[0], active: true });
   }
-
-  console.log(activeUser);
 
   return (
     <div className="h-[95vh] flex flex-col items-center justify-center bg-gradient-to-r from-gray-300 to-gray-300 bg-cover ">
