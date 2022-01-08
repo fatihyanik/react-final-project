@@ -29,10 +29,10 @@ function Write({ posts, setPosts }) {
   console.log(posts);
 
   return (
-    <div className="pt-[50px]">
+    <div className="pt-[80px]">
       <div>
         <img
-          className="ml-[150px] w-[80vw] h-[20rem] rounded-[10px] object-cover"
+          className="ml-[30px] w-[80vw] h-[20rem] rounded-[10px] object-cover"
           src="https://images.pexels.com/photos/6685428/pexels-photo-6685428.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
           alt=""
         />
@@ -41,7 +41,7 @@ function Write({ posts, setPosts }) {
       <div className="flex">
         <form onSubmit={addNewPost}>
           <div>
-            <div className="ml-[150px] flex items-center">
+            <div className="ml-[30px] flex items-center">
               <input
                 name="title"
                 onChange={inputChange}
@@ -52,7 +52,7 @@ function Write({ posts, setPosts }) {
                 required
               />
             </div>
-            <div className="ml-[150px] flex items-center">
+            <div className="ml-[30px] flex items-center">
               <input
                 name="image"
                 onChange={inputChange}
@@ -63,7 +63,7 @@ function Write({ posts, setPosts }) {
                 required
               />
             </div>
-            <div className="ml-[150px] flex items-center">
+            <div className="ml-[30px] flex items-center">
               <input
                 name="theme"
                 onChange={inputChange}
@@ -74,7 +74,7 @@ function Write({ posts, setPosts }) {
                 required
               />
             </div>
-            <div className="ml-[150px] flex items-center">
+            <div className="ml-[30px] flex items-center">
               <textarea
                 name="content"
                 onChange={inputChange}
@@ -84,15 +84,15 @@ function Write({ posts, setPosts }) {
                 autoFocus={true}
                 required
               />
-              <div>
+            </div>
+              <div className="ml-[40px] mt-5"> 
                 <button
-                  className="right-[50px] text-white bg-teal-700 p-[10px] border-none rounded-[10px] text-[16px] cursor-pointer flex items-center "
+                  className="text-white bg-teal-700 p-[10px] border-none rounded-[10px] text-[16px] cursor-pointer flex items-center "
                   type="submit"
                 >
                   Publish
                 </button>
               </div>
-            </div>
           </div>
         </form>
       </div>
