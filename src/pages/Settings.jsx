@@ -1,6 +1,4 @@
-function Setting({ currentUser, users, setUsers }) {
-  console.log(currentUser.email);
-
+function Setting({ currentUser, setCurrentUser, users, setUsers }) {
   function getNewAdmin(e) {
     e.preventDefault();
 
@@ -17,6 +15,32 @@ function Setting({ currentUser, users, setUsers }) {
     });
 
     setUsers(newArray);
+  }
+
+  function styleForm() {
+    if (currentUser.admin) {
+      return "block";
+    } else {
+      return "none";
+    }
+  }
+
+  function changeFoto(e) {
+    e.preventDefault();
+    const imageInput = document.querySelector("#input-image");
+    const imageURL = imageInput.value;
+    const newArray = [...users];
+
+    newArray[currentUser.id].image = imageURL;
+
+    setUsers(newArray);
+    setCurrentUser({
+      ...currentUser,
+      image: imageURL,
+    });
+
+    console.log(newArray);
+    console.log(users);
   }
 
   return (
@@ -38,21 +62,34 @@ function Setting({ currentUser, users, setUsers }) {
           <label>Password</label>
           <input type="password" placeholder={currentUser.password} />
         </form>
+        <form onSubmit={changeFoto}>
+          <input />
+          <input
+            id="input-image"
+            name="name"
+            className="p-[10px] bg-white border rounded-[10px] focus:outline-none"
+            type="text"
+            placeholder="Image URL"
+          />
+          <button>CHANGE IMAGE</button>
+        </form>
       </div>
-      <div>Admin Yetkisi Ver</div>
-      <form onSubmit={getNewAdmin}>
-        <label for="admin">Choose a new Admin:</label>
+      <div style={{ display: `${styleForm()}` }}>
+        <div>Admin Yetkisi Ver</div>
+        <form onSubmit={getNewAdmin}>
+          <label for="admin">Choose a new Admin:</label>
 
-        <select name="admin" id="admin">
-          {users.map((user) => {
-            return user.name !== currentUser.name ? (
-              <option value={user.name}>{user.name}</option>
-            ) : null;
-          })}
-        </select>
+          <select name="admin" id="admin">
+            {users.map((user) => {
+              return user.name !== currentUser.name && user.admin === false ? (
+                <option value={user.name}>{user.name}</option>
+              ) : null;
+            })}
+          </select>
 
-        <input id="submit" type="submit" value="Submit" />
-      </form>
+          <input id="submit" type="submit" value="Submit" />
+        </form>
+      </div>
     </div>
   );
 }
