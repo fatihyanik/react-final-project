@@ -29,7 +29,7 @@ function Single({ posts, setPosts, currentUser }) {
     console.log(currentUser);
 
     const newPost = {
-      commentUser: currentUser.name ? currentUser.name : "Kayitli olmayan kisi",
+      commentUser: currentUser.name ? currentUser.name : "Unknown Person",
       commentDate: new Date().toDateString(),
       commentContent: content,
       commentImage: currentUser.image,

@@ -93,12 +93,12 @@ function SinglePost({ posts, setPosts, currentUser }) {
   }
 
   return (
-    <div className="flex-[9]">
-      <div className="p-5 pr-0">
+    <div className="mt-8">
+      <div className="p-5 pr-5 mt-6">
         <img
           src={filteredPost[0].image}
           alt=""
-          className="w-full h-72 rounded object-cover"
+          className="w-full h-96 rounded"
         />
         <h1 className="text-center m-[10px] text-[28px] font-serif">
           {filteredPost[0].title}
