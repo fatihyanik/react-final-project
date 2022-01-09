@@ -4,13 +4,14 @@ function Write({ posts, setPosts }) {
   const postDate = new Date().toDateString();
 
   const [postState, setPostState] = useState({
-    id: posts.length + 1,
+    id: posts.length + 2 + Math.floor(Math.random() * 100 + 1),
     title: "",
     image: "",
     date: postDate,
     author: "Fatih Yanik",
     content: "",
     theme: "",
+    comments: [],
   });
 
   function inputChange(e) {
@@ -29,10 +30,10 @@ function Write({ posts, setPosts }) {
   console.log(posts);
 
   return (
-    <div className="pt-[80px]">
+    <div className="pt-[50px]">
       <div>
         <img
-          className="ml-[30px] w-[80vw] h-[20rem] rounded-[10px] object-cover"
+          className="ml-[150px] w-[80vw] h-[20rem] rounded-[10px] object-cover"
           src="https://images.pexels.com/photos/6685428/pexels-photo-6685428.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
           alt=""
         />
@@ -41,7 +42,7 @@ function Write({ posts, setPosts }) {
       <div className="flex">
         <form onSubmit={addNewPost}>
           <div>
-            <div className="ml-[30px] flex items-center">
+            <div className="ml-[150px] flex items-center">
               <input
                 name="title"
                 onChange={inputChange}
@@ -52,7 +53,7 @@ function Write({ posts, setPosts }) {
                 required
               />
             </div>
-            <div className="ml-[30px] flex items-center">
+            <div className="ml-[150px] flex items-center">
               <input
                 name="image"
                 onChange={inputChange}
@@ -63,7 +64,7 @@ function Write({ posts, setPosts }) {
                 required
               />
             </div>
-            <div className="ml-[30px] flex items-center">
+            <div className="ml-[150px] flex items-center">
               <input
                 name="theme"
                 onChange={inputChange}
@@ -74,7 +75,7 @@ function Write({ posts, setPosts }) {
                 required
               />
             </div>
-            <div className="ml-[30px] flex items-center">
+            <div className="ml-[150px] flex items-center">
               <textarea
                 name="content"
                 onChange={inputChange}
@@ -84,15 +85,15 @@ function Write({ posts, setPosts }) {
                 autoFocus={true}
                 required
               />
-            </div>
-              <div className="ml-[40px] mt-5"> 
+              <div>
                 <button
-                  className="text-white bg-teal-700 p-[10px] border-none rounded-[10px] text-[16px] cursor-pointer flex items-center "
+                  className="right-[50px] text-white bg-teal-700 p-[10px] border-none rounded-[10px] text-[16px] cursor-pointer flex items-center "
                   type="submit"
                 >
                   Publish
                 </button>
               </div>
+            </div>
           </div>
         </form>
       </div>
