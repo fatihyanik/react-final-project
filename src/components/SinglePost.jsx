@@ -1,12 +1,29 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { useEffect } from "react/cjs/react.development";
+
+let selectedIndex = "";
 
 function SinglePost({ posts, setPosts, currentUser }) {
   const params = useParams();
+  const [activePostIndex, setActivePostIndex] = useState(-1);
+  const [filteredPost, setFilteredPost] = useState([]);
 
-  const filteredPost = posts.filter((post) => {
-    return post.id === parseInt(params.id);
+  function setSelected(params) {
+    selectedIndex = params;
+  }
+
+  posts.forEach((post, index) => {
+    if (post.id === parseInt(params.id)) {
+      filteredPost.pop();
+      filteredPost.push(post);
+      setSelected(index);
+    }
   });
+
+  useEffect(() => {
+    setActivePostIndex(selectedIndex);
+  }, []);
 
   function deletePost() {
     const newArray = [...posts];
@@ -33,6 +50,7 @@ function SinglePost({ posts, setPosts, currentUser }) {
     author: currentUser.name,
     content: "",
     theme: "",
+    comments: [],
   });
 
   function openEditForm() {
@@ -54,7 +72,15 @@ function SinglePost({ posts, setPosts, currentUser }) {
   function editPost(e) {
     const newArray = [...posts];
 
-    newArray.splice(parseInt(filteredPost[0].id) - 1, 1, postState);
+    newArray.forEach((element, index) => {
+      selectedIndex = index;
+
+      if (element === filteredPost[0]) {
+        console.log(activePostIndex);
+      }
+    });
+
+    newArray.splice(parseInt(activePostIndex), 1, postState);
 
     console.log(newArray);
 
