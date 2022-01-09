@@ -14,24 +14,26 @@ function Comment({ posts }) {
         console.log(comment);
 
         return (
-          <div key={index} className="border m-10">
-            <div className="flex justify-between">
-              <span>
-                <span>
-                  {comment.commentUser}
-                  <img
-                    className="rounded-full"
+          <div key={index} className="border m-10 shadow-lg">
+            <div className="flex justify-between h-[50px] bg-gray-200 items-center">
+     
+                <span className="flex items-center">
+                <img
+                    className="w-[40px] h-[40px] rounded-[50%] object-cover mr-[15px]"
                     src={comment.commentImage}
-                    width="20px"
-                    height="20px"
+                    width="50px"
+                    height="50px"
                     alt=""
                   />
+                  <span>{comment.commentUser}</span>
+                 
                 </span>
-              </span>
-
+             
+        
               <span>{comment.commentDate}</span>
             </div>
-            <div>{comment.commentContent}</div>
+            <hr/>
+            <div className="p-3">{comment.commentContent}</div>
           </div>
         );
       })}

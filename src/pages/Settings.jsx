@@ -4,7 +4,6 @@ function Setting({ currentUser, setCurrentUser, users, setUsers }) {
 
     const selectElement = document.querySelector("#admin");
 
-    console.log(selectElement.value);
 
     const newArray = [...users];
 
@@ -39,31 +38,26 @@ function Setting({ currentUser, setCurrentUser, users, setUsers }) {
       image: imageURL,
     });
 
-    console.log(newArray);
-    console.log(users);
   }
 
   return (
-    <div className="settings flex justify-center items-center flex-col">
-      <div className="settingsWrapper">
-        <div className="settingsTitle">
-          <span className="settingsUpdateTitle">Update Your Account</span>
-          <span className="settingsDeleteTitle">Delete Account</span>
-        </div>
-        <form className="settingsForm">
-          <label>Profile Picture</label>
-          <div className="settingsPP flex justify-center">
-            <img style={{ height: "20vh" }} src={currentUser.image} alt="" />
-          </div>
-          <label>Username:</label>
+    <div className="flex items-center flex-col mt-10">
+      <div className="p-5">
+        <form className="flex flex-col">
+          
+          <label className="text-[20px] mt-12">Username</label>
           <input type="text" placeholder={currentUser.name} />
-          <label>E-mail:</label>
+          <label className="text-[20px] mt-5">E-mail</label>
           <input type="email" placeholder={currentUser.email} />
-          <label>Password</label>
+          <label className="text-[20px] mt-5">Password</label>
           <input type="password" placeholder={currentUser.password} />
         </form>
         <form onSubmit={changeFoto}>
           <input />
+        
+          <div className="settingsPP flex justify-center items-center mt-10 mb-10">
+            <img style={{ height: "20vh" }} src={currentUser.image} alt="" />
+          </div>
           <input
             id="input-image"
             name="name"
@@ -71,15 +65,15 @@ function Setting({ currentUser, setCurrentUser, users, setUsers }) {
             type="text"
             placeholder="Image URL"
           />
-          <button>CHANGE IMAGE</button>
+          <button className="m-3 right-[20px] bg-red-400 hover:bg-red-500 cursor-pointer p-[10px] border-none text-white rounded-[10px]">CHANGE IMAGE</button>
         </form>
       </div>
       <div style={{ display: `${styleForm()}` }}>
-        <div>Admin Yetkisi Ver</div>
+        <div className="text-[20px] mt-5 mb-5">Admin Permission</div>
         <form onSubmit={getNewAdmin}>
-          <label for="admin">Choose a new Admin:</label>
+          <label className="text-[20px]" htmlFor="admin">Choose a new Admin: </label>
 
-          <select name="admin" id="admin">
+          <select className="m-3" name="admin" id="admin">
             {users.map((user) => {
               return user.name !== currentUser.name && user.admin === false ? (
                 <option value={user.name}>{user.name}</option>
@@ -87,7 +81,7 @@ function Setting({ currentUser, setCurrentUser, users, setUsers }) {
             })}
           </select>
 
-          <input id="submit" type="submit" value="Submit" />
+          <input className="m-3 right-[20px] bg-teal-400 hover:bg-teal-600 cursor-pointer p-[10px] border-none text-white rounded-[10px]" id="submit" type="submit" value="Submit" />
         </form>
       </div>
     </div>

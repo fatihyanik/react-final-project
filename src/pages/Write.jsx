@@ -27,13 +27,12 @@ function Write({ posts, setPosts }) {
     alert("Your post added successfully!");
   }
 
-  console.log(posts);
 
   return (
     <div className="pt-[100px]">
         <img
-          className="ml-[30px] w-[80vw] h-[20rem] rounded-[10px]"
-          src="https://images.pexels.com/photos/6685428/pexels-photo-6685428.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+          className="ml-[30px] w-[80vw] h-[20rem] rounded-[10px] md:h-[30rem]"
+          src="https://images.pexels.com/photos/3684396/pexels-photo-3684396.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
           alt=""
         />
 
@@ -86,7 +85,7 @@ function Write({ posts, setPosts }) {
             </div>
               <div>
                 <button
-                  className="ml-[30px] text-white bg-teal-700 p-[10px] border-none rounded-[10px] text-[16px] cursor-pointer flex items-center "
+                  className="ml-[30px] text-white bg-teal-700 p-[10px] border-none rounded-[10px] text-[16px] cursor-pointer flex items-center"
                   type="submit"
                 >
                   Publish

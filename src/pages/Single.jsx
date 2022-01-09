@@ -1,11 +1,10 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react/cjs/react.development";
 import Comment from "../components/Comment";
 import SinglePost from "../components/SinglePost";
 
 function Single({ posts, setPosts, currentUser }) {
   const params = useParams();
-  const [postIndex, setPostIndex] = useState();
+
 
   function addComment(e) {
     e.preventDefault();
@@ -24,15 +23,14 @@ function Single({ posts, setPosts, currentUser }) {
       }
     });
 
-    setPostIndex(selectedIndex);
 
-    console.log(currentUser);
+
 
     const newPost = {
       commentUser: currentUser.name ? currentUser.name : "Unknown Person",
       commentDate: new Date().toDateString(),
       commentContent: content,
-      commentImage: currentUser.image,
+      commentImage: currentUser.image ? currentUser.image : "https://eitrawmaterials.eu/wp-content/uploads/2016/09/person-icon.png",
     };
     const aktuelPost = filteredCommentPost;
 
@@ -47,7 +45,7 @@ function Single({ posts, setPosts, currentUser }) {
     <div className="flex flex-col">
       <SinglePost posts={posts} setPosts={setPosts} currentUser={currentUser} />
 
-      <form onSubmit={addComment} className="mt-5 flex flex-col">
+      <form onSubmit={addComment} className="mt-5 flex flex-col m-10">
         <label className="my-[10px] mx-0 flex justify-center">Add Your Comment </label>
         <textarea
           name="content"
@@ -59,7 +57,7 @@ function Single({ posts, setPosts, currentUser }) {
           rows="2"
           required
         />
-        <button className="mt-3 cursor-pointer bg-teal-400 text-white p-[10px] border-none rounded-[10px] text-center">
+        <button className="mt-3 cursor-pointer bg-teal-400 hover:bg-teal-600 text-white p-[10px] border-none rounded-[10px] text-center">
           Add Comment
         </button>
       </form>

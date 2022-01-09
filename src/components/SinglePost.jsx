@@ -29,7 +29,6 @@ function SinglePost({ posts, setPosts, currentUser }) {
     const newArray = [...posts];
 
     newArray.forEach((post, index) => {
-      console.log(post.id, params.id);
 
       if (post.id === parseInt(params.id)) {
         newArray.splice(index, 1);
@@ -110,7 +109,6 @@ function SinglePost({ posts, setPosts, currentUser }) {
                   className="text-teal-600 ml-3 cursor-pointer far fa-edit"
                 ></i>
                 <Link to="/" onClick={deletePost}>
-                  {" "}
                   <i className="text-red-600 ml-3 cursor-pointer  far fa-trash-alt"></i>
                 </Link>
               </>

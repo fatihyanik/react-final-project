@@ -11,8 +11,8 @@ const allUsers = [
   },
   {
     id: 1,
-    name: "Ahmet Yanik",
-    email: "ahmet@gmail.com",
+    name: "Brad Pitt",
+    email: "brad@gmail.com",
     password: 1234,
     image:
       "https://img.minutoneuquen.com/u/fotografias/fotosnoticias/2020/3/23/228917.jpg",

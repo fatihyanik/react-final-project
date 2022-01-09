@@ -1,4 +1,3 @@
-import TopBar from "./components/TopBar";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -16,12 +15,11 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [users, setUsers] = useState([...allUsers]);
 
-  console.log(currentUser);
+
 
   return (
     <Router>
       <TopBar1 currentUser={currentUser} setCurrentUser={setCurrentUser} />
-      {/*   <TopBar currentUser={currentUser} setCurrentUser={setCurrentUser}/> */}
       <Routes>
         <Route exact path="/" element={<Home posts={posts} />} />
         <Route path="/posts" element={<Home posts={posts} />} />

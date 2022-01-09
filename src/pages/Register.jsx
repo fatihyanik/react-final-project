@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function Register({ users, setUsers }) {
@@ -63,18 +63,18 @@ function Register({ users, setUsers }) {
           placeholder="Enter your password..."
           required
         />
-        <button className="mt-5 cursor-pointer bg-teal-700 text-white p-[10px] border-none rounded-[10px] text-center">
+        <button className="mt-5 cursor-pointer bg-teal-700 hover:bg-teal-500 text-white p-[10px] border-none rounded-[10px] text-center">
           Register
         </button>
       </form>
-      <button className="absolute top-[100px] right-[20px] bg-red-400 cursor-pointer p-[10px] border-none text-white rounded-[10px]">
+      <button className="absolute top-[100px] right-[20px] bg-red-400 hover:bg-red-500 cursor-pointer p-[10px] border-none text-white rounded-[10px]">
         <Link className="link" to="/login">
           Login
         </Link>
       </button>
 
       <div id="warning" className="text-black hidden">
-        Bu kisi sistemde zaten kayitli!
+        This person is not found!
       </div>
     </div>
   );

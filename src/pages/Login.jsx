@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function Login({ users, setCurrentUser }) {
-  const [activeUser, setActiveUser] = useState({});
+
 
   function loginControl(e) {
     e.preventDefault();
@@ -17,7 +16,6 @@ function Login({ users, setCurrentUser }) {
       return user.email === email && parseInt(password) === user.password;
     });
 
-    setActiveUser(gettingUser[0] ? { ...gettingUser[0], active: true } : {});
 
     setCurrentUser(
       gettingUser.length > 0 ? { ...gettingUser[0], active: true } : {}
@@ -45,11 +43,11 @@ function Login({ users, setCurrentUser }) {
           required
         />
 
-        <button className="mt-5 cursor-pointer bg-red-400 text-white p-[10px] border-none rounded-[10px] text-center ">
+        <button className="mt-5 cursor-pointer bg-red-400 hover:bg-red-500 text-white p-[10px] border-none rounded-[10px] text-center ">
           Login
         </button>
       </form>
-      <button className="absolute top-[100px] right-[20px] bg-teal-700 cursor-pointer p-[10px] border-none text-white rounded-[10px]">
+      <button className="absolute top-[100px] right-[20px] bg-teal-700 hover:bg-teal-500 cursor-pointer p-[10px] border-none text-white rounded-[10px]">
         <Link className="link" to="/register">
           Register
         </Link>
