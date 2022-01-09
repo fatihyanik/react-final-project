@@ -1,18 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import allUsers from "../datas/allUsers";
 
-function Login({ setCurrentUser }) {
-  const [users, setUsers] = useState([]);
+function Login({ users, setCurrentUser }) {
   const [activeUser, setActiveUser] = useState({});
-
-  async function getUsers() {
-    setUsers(allUsers);
-  }
-
-  useEffect(() => {
-    getUsers();
-  }, []);
 
   function loginControl(e) {
     e.preventDefault();
@@ -29,19 +19,22 @@ function Login({ setCurrentUser }) {
 
     setActiveUser(gettingUser[0] ? { ...gettingUser[0], active: true } : {});
 
-    setCurrentUser({ ...gettingUser[0], active: true });
+    setCurrentUser(
+      gettingUser.length > 0 ? { ...gettingUser[0], active: true } : {}
+    );
   }
 
   return (
-    <div className="h-[100vh] flex flex-col items-center justify-center bg-gradient-to-r from-gray-300 to-gray-300 bg-cover ">
+    <div className="h-[95vh] flex flex-col items-center justify-center bg-gradient-to-r from-gray-300 to-gray-300 bg-cover ">
       <span className="text-[50px]">Login</span>
-      <form className=" mt-5 flex flex-col">
+      <form onSubmit={loginControl} className=" mt-5 flex flex-col">
         <label className="my-[10px] mx-0">Email</label>
         <input
           id="email"
           className="p-[10px] bg-white border-none rounded-[10px] focus:outline-none"
           type="text"
           placeholder="Enter your email..."
+          required
         />
         <label className="my-[10px] mx-0">Password</label>
         <input
@@ -49,14 +42,14 @@ function Login({ setCurrentUser }) {
           className="p-[10px] bg-white border-none rounded-[10px] focus:outline-none"
           type="password"
           placeholder="Enter your password..."
+          required
         />
-        <Link onClick={loginControl} to="/">
-          <button className="mt-5 cursor-pointer bg-red-400 text-white p-[10px] border-none rounded-[10px] text-center ">
-            Login
-          </button>
-        </Link>
+
+        <button className="mt-5 cursor-pointer bg-red-400 text-white p-[10px] border-none rounded-[10px] text-center ">
+          Login
+        </button>
       </form>
-      <button className="absolute top-[100px] right-[20px] bg-teal-700 cursor-pointer p-[10px] border-none text-white rounded-[10px]">
+      <button className="absolute top-[60px] right-[20px] bg-teal-700 cursor-pointer p-[10px] border-none text-white rounded-[10px]">
         <Link className="link" to="/register">
           Register
         </Link>
