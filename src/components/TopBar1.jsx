@@ -26,9 +26,6 @@ function TopBar1({ currentUser, setCurrentUser }) {
               HOME
             </Link>
           </li>
-          <li className="mr-5 text-[18px] font-light cursor-pointer hover:text-gray-500">
-            ABOUT
-          </li>
           {currentUser.admin ? (
             <li className="mr-5 text-[18px] font-light cursor-pointer hover:text-gray-500">
               <Link className="link" to="/write">
