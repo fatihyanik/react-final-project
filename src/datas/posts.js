@@ -8,6 +8,7 @@ const allPosts = [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum, excepturi sed provident nam temporibus reprehenderit ullam laudantium exercitationem nisi, quis iure? Pariatur hic officiis reiciendis velit sapiente, eius, deserunt ipsam ipsum assumenda dicta repellat soluta sit adipisci porro repellendus voluptate cum minima incidunt amet exercitationem inventore autem perspiciatis quas voluptatibus. Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
     theme: "IT",
     author: "Fatih Yanik",
+    comments: [],
   },
   {
     id: 2,
@@ -19,6 +20,7 @@ const allPosts = [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum, excepturi sed provident nam temporibus reprehenderit ullam laudantium exercitationem nisi, quis iure? Pariatur hic officiis reiciendis velit sapiente, eius, deserunt ipsam ipsum assumenda dicta repellat soluta sit adipisci porro repellendus voluptate cum minima incidunt amet exercitationem inventore autem perspiciatis quas voluptatibus. Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
     theme: "IT",
     author: "Fatih Yanik",
+    comments: [],
   },
   {
     id: 3,
@@ -30,6 +32,7 @@ const allPosts = [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum, excepturi sed provident nam temporibus reprehenderit ullam laudantium exercitationem nisi, quis iure? Pariatur hic officiis reiciendis velit sapiente, eius, deserunt ipsam ipsum assumenda dicta repellat soluta sit adipisci porro repellendus voluptate cum minima incidunt amet exercitationem inventore autem perspiciatis quas voluptatibus. Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
     theme: "IT",
     author: "Fatih Yanik",
+    comments: [],
   },
   {
     id: 4,
@@ -41,6 +44,7 @@ const allPosts = [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum, excepturi sed provident nam temporibus reprehenderit ullam laudantium exercitationem nisi, quis iure? Pariatur hic officiis reiciendis velit sapiente, eius, deserunt ipsam ipsum assumenda dicta repellat soluta sit adipisci porro repellendus voluptate cum minima incidunt amet exercitationem inventore autem perspiciatis quas voluptatibus. Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
     theme: "IT",
     author: "Fatih Yanik",
+    comments: [],
   },
   {
     id: 5,
@@ -52,6 +56,7 @@ const allPosts = [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum, excepturi sed provident nam temporibus reprehenderit ullam laudantium exercitationem nisi, quis iure? Pariatur hic officiis reiciendis velit sapiente, eius, deserunt ipsam ipsum assumenda dicta repellat soluta sit adipisci porro repellendus voluptate cum minima incidunt amet exercitationem inventore autem perspiciatis quas voluptatibus. Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
     theme: "IT",
     author: "Fatih Yanik",
+    comments: [],
   },
 ];
 
