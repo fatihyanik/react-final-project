@@ -46,20 +46,24 @@ function Single({ posts, setPosts, currentUser }) {
   return (
     <div className="flex flex-col">
       <SinglePost posts={posts} setPosts={setPosts} currentUser={currentUser} />
+
       <form onSubmit={addComment} className="mt-5 flex flex-col">
-        <div>
-          <button className="bg-indigo-500 w-24">Add Comment</button>
-          <label className="my-[10px] mx-0">Content: </label>
-          <textarea
-            name="content"
-            id="content"
-            className="p-[10px] bg-white border rounded-[10px] focus:outline-none"
-            type="text"
-            placeholder="Enter your username..."
-            required
-          />
-        </div>
+        <label className="my-[10px] mx-0 flex justify-center">Add Your Comment </label>
+        <textarea
+          name="content"
+          id="content"
+          className="p-[10px] bg-white border rounded-[10px] focus:outline-none"
+          type="text"
+          placeholder="Enter your message..."
+          cols="20"
+          rows="2"
+          required
+        />
+        <button className="mt-3 cursor-pointer bg-teal-400 text-white p-[10px] border-none rounded-[10px] text-center">
+          Add Comment
+        </button>
       </form>
+
       <Comment posts={posts} />
     </div>
   );

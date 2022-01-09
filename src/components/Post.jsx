@@ -2,7 +2,7 @@ function Post({ post }) {
   return (
     <div className="w-96 mt-10 mr-12 mb-7 ml-3">
       <img
-        className="w-full h-72 object-cover rounded-[8px]"
+        className="w-full h-72  rounded-[8px]"
         src={post.image}
         alt=""
       />

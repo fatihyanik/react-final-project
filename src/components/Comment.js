@@ -17,9 +17,8 @@ function Comment({ posts }) {
           <div key={index} className="border m-10">
             <div className="flex justify-between">
               <span>
-                {" "}
                 <span>
-                  {comment.commentUser}{" "}
+                  {comment.commentUser}
                   <img
                     className="rounded-full"
                     src={comment.commentImage}
