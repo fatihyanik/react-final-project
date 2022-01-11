@@ -11,7 +11,7 @@ function Comment({ posts }) {
   return (
     <div>
       {filteredCommentPost[0].comments.map((comment, index) => {
-        console.log(comment);
+
 
         return (
           <div key={index} className="border m-10 shadow-lg">
